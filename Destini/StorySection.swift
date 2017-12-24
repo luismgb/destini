@@ -10,4 +10,14 @@ import Foundation
 
 class StorySection {
     
+    let story: String
+    let answerA: String
+    let answerB: String
+    
+    init(story: String, answerA: String, answerB: String) {
+        self.story = story
+        self.answerA = answerA
+        self.answerB = answerB
+    }
+    
 }
