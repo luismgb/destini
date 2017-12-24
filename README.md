@@ -1,8 +1,8 @@
 ![Destini Icon](https://dl.dropboxusercontent.com/s/k9z9gq465z6npxl/Destini%20Icon-60%402x.png?dl=0)
 
-
-
 # Destini
+
+(CURRENTLY IN DEVELOPMENT)
 
 iOS Choose-Your-Own-Adventure game.
 
