@@ -46,6 +46,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/*
+Destini.xcodeproj/project.xcworkspace/xcuserdata/luismgonzalez.xcuserdatad/
 
 ## Other
 *.moved-aside

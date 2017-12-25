@@ -68,7 +68,6 @@ class ViewController: UIViewController {
     
     func updateUI() {
         storyTextView.text = allStories.array[currentSectionIndex].story
-        
         topButton.setTitle(allStories.array[currentSectionIndex].answerA, for: .normal)
         bottomButton.setTitle(allStories.array[currentSectionIndex].answerB, for: .normal)
     }
