@@ -2,8 +2,6 @@
 
 # Destini
 
-(CURRENTLY IN DEVELOPMENT)
-
 iOS Choose-Your-Own-Adventure game.
 
 ## Authors
