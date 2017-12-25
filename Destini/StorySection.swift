@@ -11,13 +11,11 @@ import Foundation
 class StorySection {
     
     let story: String
-    let answerA: String
-    let answerB: String
+    var answerA: String?
+    var answerB: String?
     
-    init(story: String, answerA: String, answerB: String) {
+    init(story: String) {
         self.story = story
-        self.answerA = answerA
-        self.answerB = answerB
     }
     
 }
