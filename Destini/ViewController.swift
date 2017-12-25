@@ -31,26 +31,34 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         switch currentSectionIndex {
+            
         case 0:
             if sender.tag == 1 {
                 currentSectionIndex = 2
             } else if sender.tag == 2 {
                 currentSectionIndex = 1
             }
+            
         case 1:
             if sender.tag == 1 {
                 currentSectionIndex = 2
             } else if sender.tag == 2 {
                 currentSectionIndex = 3
+                hideTopAndBottomButtons()
             }
+            
         case 2:
             if sender.tag == 1 {
                 currentSectionIndex = 5
+                hideTopAndBottomButtons()
             } else if sender.tag == 2 {
                 currentSectionIndex = 4
+                hideTopAndBottomButtons()
             }
+
         default:
             break
+            
         }
 
         updateUI()
@@ -65,6 +73,10 @@ class ViewController: UIViewController {
         bottomButton.setTitle(allStories.array[currentSectionIndex].answerB, for: .normal)
     }
     
+    func hideTopAndBottomButtons() {
+        topButton.isHidden = true
+        bottomButton.isHidden = true
+    }
     
 }
 
