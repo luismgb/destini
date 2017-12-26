@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restartButton.isHidden = true
+        showAndHideAppropriateButtons()
         
         updateUI()
         
@@ -47,21 +47,22 @@ class ViewController: UIViewController {
                 currentSectionIndex = 2
             } else if sender.tag == 2 {
                 currentSectionIndex = 3
-                hideTopAndBottomButtonsAndShowRestartButton()
+                showAndHideAppropriateButtons()
             }
             
         case 2:
             if sender.tag == 1 {
                 currentSectionIndex = 5
-                hideTopAndBottomButtonsAndShowRestartButton()
+                showAndHideAppropriateButtons()
             } else if sender.tag == 2 {
                 currentSectionIndex = 4
-                hideTopAndBottomButtonsAndShowRestartButton()
+                showAndHideAppropriateButtons()
             }
 
         case 3, 4, 5:
             if sender.tag == 3 {
                 restartStory()
+                showAndHideAppropriateButtons()
             }
             
         default:
@@ -80,10 +81,16 @@ class ViewController: UIViewController {
     }
     
     
-    func hideTopAndBottomButtonsAndShowRestartButton() {
-        topButton.isHidden = true
-        bottomButton.isHidden = true
-        restartButton.isHidden = false
+    func showAndHideAppropriateButtons() {
+        if currentSectionIndex <= 2 {
+            topButton.isHidden = false
+            bottomButton.isHidden = false
+            restartButton.isHidden = true
+        } else {
+            topButton.isHidden = true
+            bottomButton.isHidden = true
+            restartButton.isHidden = false
+        }
     }
     
     
