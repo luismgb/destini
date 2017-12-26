@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     
     var currentSectionIndex: Int = 0
+    let indexOfLastSectionWithTwoQuestions = 2
     let allStories = StoryCollection()
     
     
@@ -23,8 +24,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        showAndHideAppropriateButtons()
         
         updateUI()
         
@@ -47,22 +46,18 @@ class ViewController: UIViewController {
                 currentSectionIndex = 2
             } else if sender.tag == 2 {
                 currentSectionIndex = 3
-                showAndHideAppropriateButtons()
             }
             
         case 2:
             if sender.tag == 1 {
                 currentSectionIndex = 5
-                showAndHideAppropriateButtons()
             } else if sender.tag == 2 {
                 currentSectionIndex = 4
-                showAndHideAppropriateButtons()
             }
 
         case 3, 4, 5:
             if sender.tag == 3 {
                 restartStory()
-                showAndHideAppropriateButtons()
             }
             
         default:
@@ -78,11 +73,13 @@ class ViewController: UIViewController {
         storyTextView.text = allStories.array[currentSectionIndex].story
         topButton.setTitle(allStories.array[currentSectionIndex].answerA, for: .normal)
         bottomButton.setTitle(allStories.array[currentSectionIndex].answerB, for: .normal)
+        
+        showAndHideAppropriateButtons()
     }
     
     
     func showAndHideAppropriateButtons() {
-        if currentSectionIndex <= 2 {
+        if currentSectionIndex <= indexOfLastSectionWithTwoQuestions {
             topButton.isHidden = false
             bottomButton.isHidden = false
             restartButton.isHidden = true
@@ -97,6 +94,7 @@ class ViewController: UIViewController {
     func restartStory() {
         currentSectionIndex = 0
     }
+    
     
 }
 
