@@ -14,15 +14,11 @@ class StorySection {
     var answerA: String?
     var answerB: String?
     
-    // Regular StorySection instances have two possible answers.
-    init(story: String, answerA: String, answerB: String) {
+    // Regular StorySection instances have two possible answers, but instances without possible answers happen at the endings of the story.
+    init(story: String, answerA: String? = nil, answerB: String? = nil) {
         self.story = story
         self.answerA = answerA
         self.answerB = answerB
     }
-    
-    // StorySection instances without possible answers happen at the endings of the story.
-    init(story: String) {
-        self.story = story
-    }
+  
 }
